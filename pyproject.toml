@@ -1,5 +1,5 @@
 [project]
-name = "ansible-podlet"
+name = "ansible_podlet"
 version = "0.0.1"
 description = "Program to assist in converting docker-compose into podman quadlets for an ansible deployment"
 authors = [
@@ -14,10 +14,10 @@ dependencies = [
 ]
 
 [project.scripts]
-dnalet = "ansible-podlet.cli:main" 
+dnalet = "ansible_podlet.cli:main" 
 
 [tool.poetry.scripts]
-dnalet = "ansible-podlet.cli:main" 
+dnalet = "ansible_podlet.cli:main" 
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
