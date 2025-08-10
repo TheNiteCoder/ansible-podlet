@@ -3,8 +3,8 @@ from argparse import ArgumentParser
 from pathlib import Path
 import shutil
 import subprocess
-from dnalet.parse import MultiKeyConfig
-from dnalet.config import Config
+from ansible_podlet.parse import MultiKeyConfig
+from ansible_podlet.config import Config
 import traceback
 from typing import Optional, List
 
@@ -98,6 +98,7 @@ def fix_quadlet(config: Config, env_file_path: Path, quadlet_path: Path):
 
     quadlet.write(quadlet_path)
 
+
 def gen_config(quadlet_path: Path):
     quadlet_config = MultiKeyConfig()
     quadlet_config.read(quadlet_path)
@@ -157,9 +158,9 @@ def main():
         network_file = build_dir / f"{args.service_name}.network"
         network_quadlet = MultiKeyConfig()
         network_quadlet.data()['Unit']['Description'] = [
-                f'Network for {args.service_name}']
+            f'Network for {args.service_name}']
         network_quadlet.data()['Network']['Label'] = [
-                f'app={args.service_name}']
+            f'app={args.service_name}']
         network_quadlet.write(network_file)
         for entry in build_dir.iterdir():
             if entry.is_file() and entry.suffix == ".container":

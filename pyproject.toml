@@ -14,10 +14,10 @@ dependencies = [
 ]
 
 [project.scripts]
-dnalet = "ansible_podlet.cli:main" 
+ansible-podlet = "ansible_podlet.cli:main" 
 
 [tool.poetry.scripts]
-dnalet = "ansible_podlet.cli:main" 
+ansible-podlet = "ansible_podlet.cli:main" 
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
