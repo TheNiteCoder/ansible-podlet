@@ -171,7 +171,8 @@ def main():
                     # Inject network
                     quadlet = MultiKeyConfig()
                     quadlet.read(entry)
-                    quadlet.data()['Container']['Network'] = ['gitea.network']
+                    quadlet.data()['Container']['Network'] = [
+                        f'{args.service_name}.network']
                     quadlet.data()['Service']['TimeoutStartSec'] = [900]
                     quadlet.write(entry)
 
